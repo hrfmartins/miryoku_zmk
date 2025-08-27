@@ -1,5 +1,69 @@
 name: 'Temper Build'
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      board:
+        description: 'board'
+        default: 'nice_nano_v2'
+        required: true
+      shield:
+        description: 'shield'
+        required: false
+        default: 'temper_left nice_view, temper_right nice_view'
+      alphas:
+        description: 'alphas'
+        required: false
+        default: 'QWERTY'
+        type: choice
+        options:
+        - "default"
+        - "AZERTY"
+        - "BEAKL15"
+        - "Colemak"
+        - "ColemakDHK"
+        - "Dvorak"
+        - "Halmak"
+        - "QWERTY"
+        - "QWERTZ"
+        - "Workman"
+      nav:
+        description: 'nav'
+        required: false
+        default: 'vi'
+        type: choice
+        options:
+        - "default"
+        - "invertedT"
+        - "vi"
+      layers:
+        description: 'layers'
+        required: false
+        default: 'default'
+        type: choice
+        options:
+        - "default"
+        - "flip"
+      mapping:
+        description: 'mapping'
+        required: false
+        default: 'default'
+      custom_config:
+        description: 'custom_config'
+        required: false
+        default: 'default'
+      kconfig:
+        description: 'kconfig'
+        required: false
+        default: 'default'
+      branches:
+        description: 'branches'
+        required: false
+        default: 'default'
+      modules:
+        description: 'modules'
+        required: false
+        default: 'default'
+
 jobs:
   process-inputs:
     runs-on: ubuntu-latest
