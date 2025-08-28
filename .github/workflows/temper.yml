@@ -1,4 +1,4 @@
-name: "Build eyelash_sofle"
+name: "Build Temper"
 on: workflow_dispatch
 jobs:
   build-left:
